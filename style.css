@@ -1,0 +1,320 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #2c2c2c;
+}
+header{
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    padding-top: 0px;
+    background-color: #000000;
+    box-shadow: 0 0 8px #1b1b1b;
+}
+/* Modify the nav styles */
+nav {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    padding: 0 20px;
+    justify-content: space-between;
+    position: relative;
+    background-color: #000000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav a {
+    display: flex;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #ac7602;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(172, 118, 2, 0.3);
+}
+/* Active link styles */
+nav a.active {
+    background-color: #ac7602;
+    color: #fff;
+    font-weight: bold;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(172, 118, 2, 0.3);
+}
+
+/* Hover effect for non-active links */
+nav a:not(.active):hover {
+    background-color: #ac7602;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(172, 118, 2, 0.3);
+}
+
+@media (max-width: 768px) {
+    nav a.active {
+        transform: scale(1.05);
+    }
+}
+
+
+/* Hamburger menu styles */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Animation for hamburger to X */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        z-index: 1000;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 4rem;
+        left: -100%; /* Start off-screen */
+        width: 100%;
+        height: calc(100vh - 4rem);
+        background-color: #000000;
+        flex-direction: column;
+        padding: 20px 0;
+        transition: left 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul.active {
+        left: 0; /* Slide in from the left */
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    nav a {
+        width: 100%;
+        padding: 15px 0;
+        margin: 0;
+        justify-content: center;
+    }
+
+    nav a:hover {
+        transform: scale(1.05);
+        background-color: #ac7602;
+    }
+}
+
+/* Style the logo image */
+nav img.logo {
+    height: 100%;
+    margin-right: 20px; /* Space between logo and nav links */
+}
+
+/* Style the nav links */
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center; /* Align items vertically */
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav-link {
+    color: white; /* Example link color */
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+.container{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    color: #f1f1f1;
+    padding-top: 0; /* Remove top padding */
+    text-align: left;
+    display: block;
+    gap: 20px;
+    background-size: cover;
+}
+.container h1{
+    top: 200px; /* Adjust as needed */
+    padding-left: 100px;
+    font-size: 3rem; /* Use relative units */
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+    text-shadow: #000000 3px 5px 15px;
+}
+.container p{
+    top: 300px; /* Adjust as needed */
+    padding-left: 150px;
+    font-size: 1.5rem; /* Use relative units */
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+    
+}   
+.container img {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    margin: 0 auto; /* Remove margin-bottom */
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    filter: blur(3px);
+    will-change: transform;
+    transform: translateZ(0);
+}
+.container h1, .container p {
+    position: absolute;
+    left: 30px; /* Adjust as needed */
+    color: white; /* Ensure text is visible on the image */
+}
+
+.container .link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container .link a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #ac7602; /* Optional background for better visibility */
+    text-decoration: none;
+    color: white;
+    clip-path: circle(50%);
+    transition: background-color 0.5s;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: #000000 3px 5px 15px;
+}
+
+/* Modern footer styles */
+.site-footer {
+    background-color: #2c2c2c;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 150px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-links a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #dda939;
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+    }
+
+    nav img.logo {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    .container {
+        h1, p {
+            padding-left: 20px;
+        }
+        h1 { font-size: 2rem; }
+        p { font-size: 1rem; }
+    }
+
+    .container .link a {
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+    }
+}
+@media print {
+    .social-links {
+        display: none;
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
